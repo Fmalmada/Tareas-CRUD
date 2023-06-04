@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Nueva tarea</title>
+</head>
+<body>
+    <form method="post" th:object="${tarea}">
+    <div>
+        <label for="nombre">Nombre</label>
+        <input id="nombre" th:field="*{nombre}" name="nombre" type="text">
+        <span th:if="${#fields.hasErrors('nombre')}" th:errors = "*{nombre}"></span>
+    </div>
+        <div>
+            <button>Guardar</button>
+        </div>
+     </form>
+</body>
+</html>

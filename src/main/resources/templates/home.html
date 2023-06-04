@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en"
+        xmls="https://www.w3.org/1999/xhtml"
+xmlns:th="http:/ /www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas CRUD</title>
+</head>
+<body>
+<h1>Tareas</h1>
+<table>
+    <thead>
+    <tr>
+        <th>Nombre</th>
+        <th>Creada en</th>
+        <th>Acciones</th>
+    </tr>
+    </thead>
+    <tr th:each="tarea: ${tareas}">
+        <td th:text="${tarea.nombre}"></td>
+        <td th:text="${tarea.creadaEn}"></td>
+        <td>
+            <a type="button" th:href="@{/editar/{id}(id = ${tarea.id})}">Editar</a>
+            <a type="button" th:href="@{/eliminar/{id} (id = ${tarea.id})}">Eliminar</a>
+        </td>
+    </tr>
+</table>
+<a th:href="@{/nuevaTarea}">Nueva tarea</a>
+</body>
+</html>
