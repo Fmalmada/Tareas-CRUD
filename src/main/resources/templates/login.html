@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns = "http://www.w3.org/1999/xhtml"
+      xmlns:th = "http://www.thymeleaf.org" lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Tareas</title>
+</head>
+<body>
+<h1>Inicio de sesión</h1>
+
+<div th:if="${error}">
+  Compruebe su nombre de usuario y contraseña.
+</div>
+
+<p>¿No tiene una cuenta? haga click
+<a th:href="@{/register}"> aquí</a></p>
+
+<form method="post" th:action="@{/login}" id="loginform">
+  <label form="username">Nombre de usuario:</label>
+  <input type="text" name="username" id="username" /><br/>
+
+  <label form="password">Contraseña:</label>
+  <input type="text" name="password" id="password" /><br/>
+
+    <input type="submit" value="login"/>
+</form>
+</body>
+</html>

@@ -85,5 +85,10 @@ public class TareasController {
         tareasRepo.deleteById(id);
         return "redirect:/";
     }
+
+    @GetMapping("login")
+    public String login(){
+        return "login";
+    }
 }
 
