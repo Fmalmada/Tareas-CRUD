@@ -33,7 +33,7 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         return http
-                .authorizeHttpRequests(authz ->authz.requestMatchers("/", "/editar", "/eliminar", "/editar/**", "/eliminar/**").hasRole("USER").requestMatchers("/register", "/login").permitAll())
+                .authorizeHttpRequests(authz ->authz.requestMatchers("/", "/editar", "/nuevaTarea", "/eliminar/**").hasRole("USER").requestMatchers("/register", "/login").permitAll())
                 .formLogin((formLogin) -> formLogin.loginPage("/login"))
                 .build();
     }
